@@ -1,0 +1,229 @@
+
+# Mac ignore the zsh warning.
+export BASH_SILENCE_DEPRECATION_WARNING=1
+
+################################ PROXY ################################
+
+# ---- fef proxy ----
+
+# http_proxy="http://dev-proxy.oa.com:8080"
+# https_proxy="http://dev-proxy.oa.com:8080"
+# http_proxy=http://127.0.0.1:12639
+# https_proxy=http://127.0.0.1:12639
+# export http_proxy https_proxy
+
+
+# ---- http (github) proxy ----
+
+# http_proxy=web-proxy.tencent.com:8080
+# https_proxy=web-proxy.tencent.com:8080
+# ftp_proxy=web-proxy.tencent.com:8080
+# no_proxy="127.0.0.1,9.*.*.*,10.*.*.*,172.16.*.*,192.168.*.*,tlinux-mirror.tencent-cloud.com,tlinux-mirrorlist.tencent-cloud.com,localhost,mirrors-tlinux.tencentyun.com,*.oa.com,devgw.devops.oa.com,*.local,git.code.oa.com,download.devcloud.oa.com,*.woa.com"
+# export http_proxy https_proxy ftp_proxy no_proxy
+
+
+# ---- home brew 源 ----
+
+# cd "$(brew --repo)"
+# git remote set-url origin https://mirrors.tencent.com/homebrew/brew.git
+
+# cd "$(brew --repo)/Library/Taps/homebrew/homebrew-core"
+# git remote set-url origin https://mirrors.tencent.com/homebrew/homebrew-core.git
+
+# export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.cloud.tencent.com/homebrew-bottles
+# export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.aliyun.com/homebrew/homebrew-bottles
+
+
+# ---- csighub proxy （好像不需要，只用设置/etc/hosts 就行了）----
+
+# http_proxy="http://100.116.81.47:80"
+# https_proxy="http://100.116.81.47:80"
+# no_proxy="csighub.tencentyun.com,bk.artifactory.oa.com"
+# export http_proxy https_proxy no_proxy
+
+################################ PATH ################################
+
+# ----  Research  ----
+
+PATH=${PATH}:/usr/local/opt/gmt@5/bin:/Users/shuleyu/.local/TauP-2.4.5/bin:${HOME}/Documents/Research/Fun.Bash.c001
+
+# ---- Go ----
+
+export GOPATH="/Users/shuleyu/Developer/GoPath"
+PATH=${PATH}:${GOPATH}/bin
+export GO111MODULE=on
+# export GOSUMDB=off
+
+# ---- FT ----
+
+export PATH="$PATH:$HOME/.ft"
+
+# ---- local ----
+
+PATH=/usr/local/opt/coreutils/libexec/gnubin:${PATH}
+PATH=${PATH}:${HOME}/.local/bin
+
+# ---- mysql ----
+
+PATH=${PATH}:/usr/local/mysql/bin
+
+# ---- SAC ----
+
+export SACHOME="/usr/local/sac"
+. ${SACHOME}/bin/sacinit.sh
+
+################################ alias ################################
+
+# ---- git ----
+
+alias gs='git status '
+alias gd='git diff '
+alias graph='git log --all --decorate --oneline --graph '
+alias gr='git rebase '
+alias grh='git rebase -i HEAD^ '
+alias grc='git rebase --continue '
+alias gp='git push '
+alias gpf='git push -f --no-verify'
+alias gc='git checkout '
+alias ga='git add '
+alias gb="git branch -vv"
+
+
+# ---- dirs ----
+
+alias work="cd ~/Tencent; ls"
+alias spp="cd ~/Tencent/fm_spp; ls"
+
+# ---- ssh ----
+alias build="ssh -p 36000 shuleyu@9.135.161.30"
+tobuild () {
+    scp -r -P 36000 $1 shuleyu@9.135.161.30:~
+}
+frombuild () {
+    scp shuleyu@9.135.161.30:$1 ./
+}
+
+alias mnet="ssh -p 36000 shuleyu@pcg.mnet2.com"
+tomnet () {
+    scp -r -P 36000 $1 shuleyu@pcg.mnet2.com:~
+}
+frommnet () {
+    scp -r -P 36000 shuleyu@pcg.mnet2.com:$1 ./
+}
+
+# ---- vim and others ----
+
+alias vim="vim -O "
+alias vi="vim "
+alias v="vim "
+alias ll="ls -alrth "
+alias grep="grep -Hn "
+alias sl="screen -list "
+alias r="screen -r "
+alias S="screen -S "
+alias tf="tail -f "
+alias ls="ls --color=auto "
+export LS_COLORS='di=94:ex=32:ln=95:or=5;31:*.c=91:*.cpp=91:*.go=91:*.hpp=3:*.h=3:*_test.go=93:*.sh=4:*.txt=90'
+
+
+# ---- find ----
+
+ff () {
+    find ${PWD} -type f -iname "$1" -exec grep -"${2}" "$3" '{}' \;
+}
+findh () {
+    ff "*.h" "Hin" "$1"
+}
+findhw () {
+    ff "*.h" "Hinw" "$1"
+}
+findhpp () {
+    ff "*.hpp" "Hin" "$1"
+}
+findhppw () {
+    ff "*.hpp" "Hinw" "$1"
+}
+findgo () {
+    ff "*.go" "Hin" "$1"
+}
+findgow () {
+    ff "*.go" "Hinw" "$1"
+}
+findc () {
+    ff "*.c" "Hin" "$1"
+}
+findcw () {
+    ff "*.c" "Hinw" "$1"
+}
+findcpp () {
+    ff "*.cpp" "Hin" "$1"
+}
+findcppw () {
+    ff "*.cpp" "Hinw" "$1"
+}
+findpy () {
+    ff "*.py" "Hin" "$1"
+}
+findpyw () {
+    ff "*.py" "Hinw" "$1"
+}
+findfile () {
+    ff "*" "Hin" "$1"
+}
+findfilew () {
+    ff "*" "Hinw" "$1"
+}
+findmake () {
+    ff "*makefile*" "Hin" "$1"
+}
+findmakew () {
+    ff "*makefile*" "Hinw" "$1"
+}
+findf () {
+    find ${PWD} -type f -name "$1"
+}
+
+################################ history ################################
+
+export HISTCONTROL=ignoredups:erasedups
+alias hle="history 10"
+alias h="history "
+export HISTFILESIZE=1000000
+export HISTSIZE=1000000
+export HISTIGNORE="&:exit:h:"
+
+# ---- share history from all tty ----
+
+export PROMPT_COMMAND="history -a"
+
+# ---- use the begining part to search history ----
+
+bind '"\e[A": history-search-backward' 2> /dev/null
+bind '"\e[B": history-search-forward' 2> /dev/null
+bind 'Control-p: history-search-backward' 2> /dev/null
+bind 'Control-n: history-search-forward' 2> /dev/null
+
+################################ user prompt ################################
+
+PS1="~\n~\n\[\033[00;38;5;71m\]\u@shule-MBP \t \[\033[00;38;5;012m\]\w $ \[\033[0m\]"
+
+# begin="\\033[1;48;5;16m"
+# s="\\033[38;5;107ms"
+# h="\\033[38;5;125mh"
+# u="\\033[38;5;94mu"
+# l="\\033[38;5;57ml"
+# e="\\033[38;5;105me"
+# y="\\033[38;5;214my"
+# U="\\033[38;5;167mu"
+# at="\\033[38;5;142m@"
+# i="\\033[38;5;142mi"
+# M="\\033[38;5;55mM"
+# a="\\033[38;5;121ma"
+# c="\\033[38;5;100mc"
+# end="\\033[0m"
+# User="${begin}$s$h$u$l$e$y$U$at$i$M$a$c${end}"
+# PS1="~\n~\n${User} \\033[01;38;5;33m\w $ ${end}"
+
+# Grep style
+export GREP_OPTIONS='--color=auto'
+export GREP_COLOR='4;36;40'
