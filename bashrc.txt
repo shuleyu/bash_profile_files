@@ -1,3 +1,7 @@
+# Source global definitions
+if [ -f /etc/bashrc ]; then
+    /etc/bashrc
+fi
 
 # Mac ignore the zsh warning.
 export BASH_SILENCE_DEPRECATION_WARNING=1
@@ -210,3 +214,20 @@ PS1="~\n~\n\[\033[00;38;5;71m\]\u@shule-MBP \t \[\033[00;38;5;012m\]\w $ \[\033[
 # Grep style
 export GREP_OPTIONS='--color=auto'
 export GREP_COLOR='4;36;40'
+
+
+################################ fib ################################
+
+# allow binaries to be executed;
+# added by git.code.oa.com/code-quality/cli-tools/setup
+export PATH="/root/tenv/node/current/bin:/root/tenv/node/current/npm-packages/bin:$PATH"
+
+
+# allow binaries to be executed;
+# added by git.code.oa.com/code-quality/cli-tools/setup
+export PATH="$PATH:/root/.fef/bin"
+
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
