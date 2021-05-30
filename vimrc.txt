@@ -1,0 +1,116 @@
+
+"=================== color ===================
+
+colorscheme default
+syntax enable
+
+hi DiffAdd    cterm=bold ctermfg=10 ctermbg=17 gui=none guifg=bg guibg=Red
+hi DiffDelete cterm=bold ctermfg=10 ctermbg=17 gui=none guifg=bg guibg=Red
+hi DiffChange cterm=bold ctermfg=10 ctermbg=17 gui=none guifg=bg guibg=Red
+hi DiffText   cterm=bold ctermfg=10 ctermbg=88 gui=none guifg=bg guibg=Red
+
+hi Visual     cterm=none ctermbg=lightgray ctermfg=black
+hi MatchParen cterm=bold ctermbg=none ctermfg=yellow
+hi Search     cterm=bold ctermbg=black ctermfg=yellow
+hi LineNr     cterm=none ctermbg=none ctermfg=brown
+
+hi Comment    cterm=none ctermbg=none ctermfg=darkblue
+hi Identifier cterm=none ctermbg=none ctermfg=96
+hi Constant   cterm=none ctermbg=none ctermfg=124
+hi Statement  cterm=none ctermbg=none ctermfg=brown
+hi PreProc    cterm=none ctermbg=none ctermfg=darkmagenta
+hi Type       cterm=none ctermbg=none ctermfg=34
+hi Special    cterm=none ctermbg=none ctermfg=darkmagenta
+hi ColorColumn ctermbg=8
+
+" tab 缩进
+set list
+set listchars=tab:>.
+
+" 中文乱码
+set fileencodings=utf-8,ucs-bom,gb18030,gbk,gb2312,cp936
+set termencoding=utf-8
+set encoding=utf-8
+
+" 关闭兼容模式
+set nocompatible
+
+set backspace=2
+set nu
+set ruler
+set wrap
+set hlsearch
+set colorcolumn=100
+
+set smarttab
+set shiftwidth=4
+set tabstop=4
+set autoindent " 继承前一行的缩进方式，适用于多行注释
+set expandtab
+set si
+
+
+let Tlist_Ctags_Cmd="/data/home/shuleyu/tags"
+let Tlist_Auto_Open=1
+set tags=tags;
+set autochdir
+map gd <C-]>
+
+
+map j gj
+map k gk
+map fj <C-w><C-w>
+map f= 5<C-w>>
+map f- 5<C-w><
+map # *Nzz
+map gd <C-]>
+
+map H <<<Esc>
+map J 10j
+map K 10k
+map L >><Esc>
+
+map S d$d0x
+map U <C-r>
+map Q :%s/\s\+$//<Return>:nohl<Return>
+
+map <space> /
+map t :s/^/# /<Return>:nohl<Return>
+map T :s/^# //<Return>:nohl<Return>
+map // :s/^/\/\/ /<Return>:nohl<Return>
+map ?? :s/^\/\/ //<Return>:nohl<Return>
+map \ :nohl<Return>
+map q :qa<Return>
+map ; :wa<Return>
+
+" diff mode
+if &diff
+    set diffopt=filler,context:1000000
+endif
+
+" last edit position
+if has("autocmd")
+  au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
+endif
+
+" Go 插件
+" Plug 'majutsushi/tagbar'
+" Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+
+let g:go_version_warning = 1
+let g:go_highlight_types = 1
+let g:go_highlight_fields = 1
+let g:go_highlight_functions = 1
+let g:go_highlight_function_calls = 1
+let g:go_highlight_operators = 1
+let g:go_highlight_extra_types = 1
+let g:go_highlight_methods = 1
+let g:go_highlight_generate_tags = 1
+
+let g:ycm_show_diagnostics_ui = 0          " stop the annoying syntax check while I'm typing.
+let g:go_doc_keywordprg_enabled = 0        " stop "K" becomes a command.
+let g:go_fmt_autosave = 0                  " stop go fmt on save
+let g:go_highlight_diagnostic_errors=0
+
+" 备选
+" filetype plugin indent off
