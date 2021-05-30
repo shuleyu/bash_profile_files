@@ -121,7 +121,7 @@ alias vim="vim -O "
 alias vi="vim "
 alias v="vim "
 alias ll="ls -alrth "
-alias grep="grep -Hn "
+alias grep="grep -Hn --color=auto "
 alias sl="screen -list "
 alias r="screen -r "
 alias S="screen -S "
@@ -133,7 +133,7 @@ export LS_COLORS='di=94:ex=32:ln=95:or=5;31:*.c=91:*.cpp=91:*.go=91:*.hpp=3:*.h=
 # ---- find ----
 
 ff () {
-    find ${PWD} -type f -iname "$1" -exec grep -"${2}" "$3" '{}' \;
+    find ${PWD} -type f -iname "$1" -exec grep --color=auto -"${2}" "$3" '{}' \;
 }
 findh () {
     ff "*.h" "Hin" "$1"
@@ -212,7 +212,7 @@ bind 'Control-n: history-search-forward' 2> /dev/null
 PS1="~\n~\n\[\033[00;38;5;71m\]\u@shule-MBP \t \[\033[00;38;5;012m\]\w $ \[\033[0m\]"
 
 # Grep style
-export GREP_OPTIONS='--color=auto'
+# export GREP_OPTIONS='--color=auto'
 export GREP_COLOR='4;36;40'
 
 
