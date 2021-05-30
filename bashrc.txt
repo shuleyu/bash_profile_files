@@ -1,6 +1,6 @@
 # Source global definitions
 if [ -f /etc/bashrc ]; then
-    /etc/bashrc
+    . /etc/bashrc
 fi
 
 # Mac ignore the zsh warning.
@@ -71,10 +71,10 @@ PATH=${PATH}:${HOME}/.local/bin
 
 PATH=${PATH}:/usr/local/mysql/bin
 
-# ---- SAC ----
-
-export SACHOME="/usr/local/sac"
-. ${SACHOME}/bin/sacinit.sh
+# # ---- SAC ----
+# 
+# export SACHOME="/usr/local/sac"
+# . ${SACHOME}/bin/sacinit.sh
 
 ################################ alias ################################
 
