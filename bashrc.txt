@@ -207,23 +207,6 @@ bind 'Control-n: history-search-forward' 2> /dev/null
 
 PS1="~\n~\n\[\033[00;38;5;71m\]\u@shule-MBP \t \[\033[00;38;5;012m\]\w $ \[\033[0m\]"
 
-# begin="\\033[1;48;5;16m"
-# s="\\033[38;5;107ms"
-# h="\\033[38;5;125mh"
-# u="\\033[38;5;94mu"
-# l="\\033[38;5;57ml"
-# e="\\033[38;5;105me"
-# y="\\033[38;5;214my"
-# U="\\033[38;5;167mu"
-# at="\\033[38;5;142m@"
-# i="\\033[38;5;142mi"
-# M="\\033[38;5;55mM"
-# a="\\033[38;5;121ma"
-# c="\\033[38;5;100mc"
-# end="\\033[0m"
-# User="${begin}$s$h$u$l$e$y$U$at$i$M$a$c${end}"
-# PS1="~\n~\n${User} \\033[01;38;5;33m\w $ ${end}"
-
 # Grep style
 export GREP_OPTIONS='--color=auto'
 export GREP_COLOR='4;36;40'
