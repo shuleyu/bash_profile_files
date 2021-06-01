@@ -23,6 +23,9 @@ hi Type       cterm=none ctermbg=none ctermfg=34
 hi Special    cterm=none ctermbg=none ctermfg=darkmagenta
 hi ColorColumn ctermbg=8
 
+hi String ctermfg=red
+hi Number ctermfg=red
+
 " tab 缩进
 set list
 set listchars=tab:>.
@@ -120,12 +123,14 @@ call plug#end()
 " git clone https://github.com/preservim/nerdtree.git
 " Plug 'preservim/nerdtree'
 " :NERDTreeToggle
+" map <C-n> :NERDTreeToggle<CR>
 
 " 侧边栏，显示函数和变量
 " $ cd ~/.vim/plugged
 " $ git clone https://github.com/preservim/tagbar.git
 " Plug 'majutsushi/tagbar'
 " :TagbarToggle
+" map <C-b> :TagbarToggle<CR>
 
 " vim-go
 " $ cd ~/.vim/plugged
