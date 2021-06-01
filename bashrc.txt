@@ -4,7 +4,7 @@ if [ -f /etc/bashrc ]; then
 fi
 
 # Mac ignore the zsh warning.
-export BASH_SILENCE_DEPRECATION_WARNING=1
+# export BASH_SILENCE_DEPRECATION_WARNING=1
 
 ################################ PROXY ################################
 
@@ -49,13 +49,14 @@ export BASH_SILENCE_DEPRECATION_WARNING=1
 
 # ----  Research  ----
 
-PATH=${PATH}:/usr/local/opt/gmt@5/bin:/Users/shuleyu/.local/TauP-2.4.5/bin:${HOME}/Documents/Research/Fun.Bash.c001
+# PATH=${PATH}:/usr/local/opt/gmt@5/bin:/Users/shuleyu/.local/TauP-2.4.5/bin:${HOME}/Documents/Research/Fun.Bash.c001
 
 # ---- Go ----
 
-export GOPATH="/Users/shuleyu/Developer/GoPath"
-PATH=${PATH}:${GOPATH}/bin
-export GO111MODULE=on
+# export GOPATH="/Users/shuleyu/Developer/GoPath"
+# PATH=${PATH}:${GOPATH}/bin
+# export GOPROXY=direct
+# export GO111MODULE=on
 # export GOSUMDB=off
 
 # ---- FT ----
