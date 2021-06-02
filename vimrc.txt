@@ -23,9 +23,6 @@ hi Type       cterm=none ctermbg=none ctermfg=34
 hi Special    cterm=none ctermbg=none ctermfg=darkmagenta
 hi ColorColumn ctermbg=8
 
-hi String ctermfg=red
-hi Number ctermfg=red
-
 " tab 缩进
 set list
 set listchars=tab:>.

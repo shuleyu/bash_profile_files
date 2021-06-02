@@ -53,7 +53,7 @@ fi
 
 # ---- Go ----
 
-# export GOPATH="/Users/shuleyu/Developer/GoPath"
+# export GOPATH="${HOME}/GoPath"
 # PATH=${PATH}:${GOPATH}/bin
 # export GOPROXY=direct
 # export GO111MODULE=on
@@ -61,11 +61,11 @@ fi
 
 # ---- FT ----
 
-export PATH="$PATH:$HOME/.ft"
+# export PATH="$PATH:$HOME/.ft"
 
 # ---- local ----
 
-PATH=/usr/local/opt/coreutils/libexec/gnubin:${PATH}
+# PATH=/usr/local/opt/coreutils/libexec/gnubin:${PATH}
 PATH=${PATH}:${HOME}/.local/bin
 
 # ---- mysql ----
@@ -100,12 +100,13 @@ alias work="cd ~/Tencent; ls"
 alias spp="cd ~/Tencent/fm_spp; ls"
 
 # ---- ssh ----
+
 alias build="ssh -p 36000 shuleyu@9.135.161.30"
 tobuild () {
-    scp -r -P 36000 $1 shuleyu@9.135.161.30:~
+    scp -r $1 shuleyu@9.135.161.30:~
 }
 frombuild () {
-    scp shuleyu@9.135.161.30:$1 ./
+    scp -r shuleyu@9.135.161.30:$1 ./
 }
 
 alias mnet="ssh -p 36000 shuleyu@pcg.mnet2.com"
