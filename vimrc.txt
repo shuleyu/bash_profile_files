@@ -121,7 +121,7 @@ call plug#end()
 " $ git clone https://github.com/preservim/nerdtree.git
 " Plug 'preservim/nerdtree'
 " :NERDTreeToggle
-" map <C-n> :NERDTreeToggle<CR>
+" map <C-x> :NERDTreeToggle<CR>
 
 " 侧边栏，显示函数和变量
 " $ cd ~/.vim/plugged
@@ -133,6 +133,8 @@ call plug#end()
 " vim-go
 " $ cd ~/.vim/plugged
 " $ git clone https://github.com/fatih/vim-go.git
+" $ sudo vim 中运行 :GoInstallBinaries
+" $ go get github.com/jstemmer/gotags
 " Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 
 " vim-go 插件配置
