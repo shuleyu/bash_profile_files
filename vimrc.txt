@@ -21,7 +21,7 @@ hi Statement  cterm=none ctermbg=none ctermfg=brown
 hi PreProc    cterm=none ctermbg=none ctermfg=darkmagenta
 hi Type       cterm=none ctermbg=none ctermfg=34
 hi Special    cterm=none ctermbg=none ctermfg=darkmagenta
-hi SpecialKey cterm=italic ctermbg=none ctermfg=darkblue
+hi SpecialKey cterm=none ctermbg=none ctermfg=darkblue
 hi ColorColumn ctermbg=8
 
 " tab 缩进
