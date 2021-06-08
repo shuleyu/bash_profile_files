@@ -21,11 +21,12 @@ hi Statement  cterm=none ctermbg=none ctermfg=brown
 hi PreProc    cterm=none ctermbg=none ctermfg=darkmagenta
 hi Type       cterm=none ctermbg=none ctermfg=34
 hi Special    cterm=none ctermbg=none ctermfg=darkmagenta
+hi SpecialKey cterm=italic ctermbg=none ctermfg=darkblue
 hi ColorColumn ctermbg=8
 
 " tab 缩进
 set list
-set listchars=tab:>.
+set listchars=tab:>.,trail:.
 
 " 中文乱码
 set fileencodings=utf-8,ucs-bom,gb18030,gbk,gb2312,cp936
@@ -147,7 +148,7 @@ call plug#end()
 " let g:go_highlight_extra_types = 1
 " let g:go_highlight_methods = 1
 " let g:go_highlight_generate_tags = 1
- 
+
 " let g:ycm_show_diagnostics_ui = 0          " 编辑的时候，不做语法检查
 " let g:go_doc_keywordprg_enabled = 0        " 让K 停止成为一个快捷键
 " let g:go_highlight_diagnostic_errors=0

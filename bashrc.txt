@@ -101,6 +101,8 @@ alias gb="git branch -vv"
 
 alias work="cd ~/Tencent; ls"
 alias spp="cd ~/Tencent/fm_spp; ls"
+alias qqh="cd ~/Tencent/qqhealth_proj; ls"
+alias qqh2="cd ~/Tencent/sports_app_proj; ls"
 
 # ---- ssh ----
 
