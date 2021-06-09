@@ -84,6 +84,8 @@ PATH=${PATH}:/usr/local/mysql/bin
 
 # ---- git ----
 
+export VISUAL=vim
+
 alias gs='git status '
 alias gd='git diff '
 alias graph='git log --all --decorate --oneline --graph '
